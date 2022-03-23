@@ -4,7 +4,7 @@ var gallery;
 
 
 function load() {
-    return gallery = photoloader.loadRessource("/www/canals5/phox/api/photos")
+    return gallery  = photoloader.loadRessource("/www/canals5/phox/api/photos")
 }
 
 function next(){
