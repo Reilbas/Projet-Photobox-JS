@@ -9,18 +9,22 @@ function display_lightbox(data) {
     container.innerHTML = `
     <div id="lightbox">
     <div id="lightbox-head">
-        <p id="lightbox_close">X</p>
+        <button id="lightbox_close">X</button>
         <h1 id="lightbox_title">${data.photo.titre}</h1>
     </div>
 
     <div id="lightbox-img">
-        <button id = "prev-img"> <-- </button>
+        <button id = "prev-img"> last </button>
         <img id="lightbox_full_img" src="${config + data.photo.url.href}">
-        <button id = "next-img"> --> </button>
+        <button id = "next-img"> next </button>
     </div>
+    
+
     <div id = "infos-photo">
          <h1> Description : ${data.photo.descr} </h1>
+         <br>
          <h1> Format : ${data.photo.format} </h1>
+         <br>
          <h1> Les commentaires : </h1>
          <div id="commentaire_photo">
          
@@ -39,8 +43,8 @@ function display_lightbox(data) {
             divPhoto.innerHTML = commmentaires;
         }
     )
-    document.querySelector('#lightbox_close').addEventListener('click', e => {
-        hide();
+    document.querySelector('#lightbox_close').addEventListener('click', evt => {
+        lightbox.();
     })
 
     document.querySelector('#prev-img').addEventListener('click', evt => {
