@@ -14,17 +14,16 @@ function display_lightbox(data) {
     </div>
 
     <div id="lightbox-img">
-        <button id = "prev-img"> last </button>
+        <button id = "prev-img"> <div class="arrow-2"></div> </button>
         <img id="lightbox_full_img" src="${config + data.photo.url.href}">
-        <button id = "next-img"> next </button>
+        <button id = "next-img"><div class="arrow-1"></div> </button>
     </div>
     
 
     <div id = "infos-photo">
          <h1> Description : ${data.photo.descr} </h1>
-         <br>
+
          <h1> Format : ${data.photo.format} </h1>
-         <br>
          <h1> Les commentaires : </h1>
          <div id="commentaire_photo">
          
@@ -44,7 +43,7 @@ function display_lightbox(data) {
         }
     )
     document.querySelector('#lightbox_close').addEventListener('click', evt => {
-        lightbox.();
+        hide();
     })
 
     document.querySelector('#prev-img').addEventListener('click', evt => {
@@ -61,7 +60,8 @@ function show() {
 }
 
 function hide() {
-    document.getElementById("lightbox").classList.toggle("hide");
+    document.getElementById("lightbox").classList.remove("lightbox_container--visible");
+    document.getElementById("lightbox").classList.add("lightbox_container--hidden");
 }
 
 export default {
